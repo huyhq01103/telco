@@ -44,12 +44,12 @@
   	<%= require('html-loader!./partials/footer.html') %>
 </body>
 <script type="text/javascript">
-	$('.vina-data, .mobi-data').slick({
+	$('.slider').slick({
 		slidesToShow: 3,
 		slidesToScroll: 1,
 		dots: true,
 		variableWidth: true,
-		infinite: false,
+		autoplay: true,
 		responsive: [
 		{
 		breakpoint: 1023,
@@ -66,13 +66,12 @@
 		}
 	]
 	});
+	
     const labels = document.querySelectorAll(".item");
 	const tabs = document.querySelectorAll(".tab");
 	const btnModal = document.querySelectorAll('.guide');
-
-	// btnModal.addEventListener("click", function(){
-    //     overlay();
-	// });
+	const modal = document.querySelector('.overlay');
+	const body = document.querySelector('body');
 	btnModal.forEach(function(item) {
 		item.addEventListener("click", function(){
 			overlay();
@@ -80,13 +79,16 @@
 	});
 	
 	function overlay() {
-		const overlay = document.querySelector('.overlay');
-		const body = document.querySelector('body');
-		overlay.classList.toggle('active');
+		modal.classList.toggle('active');
 		body.classList.toggle('fixed');
 	}
 	function closeBtn() {
 		overlay();
+	}
+	window.onclick = function(event) {
+		if (event.target == modal) {
+			overlay();
+		}
 	}
 
 	function toggleShow() {

@@ -1,6 +1,11 @@
 $green = #4FBA69
 bg()
   background linear-gradient(90deg, $green 0%, #97C93D 100%)
+fade()
+  -webkit-animation-name fade
+  -webkit-animation-duration 0.5s
+  animation-name fade
+  animation-duration 0.5s
 clearfix()
 	&:before
 	&:after
@@ -12,6 +17,7 @@ clearfix()
 		zoom 1
 *
   box-sizing border-box
+  transition all 0.5s ease
 img 
   max-width 100%
 html,body
@@ -101,6 +107,7 @@ footer
   display none
 
 .item
+  fade()
   display none
   &.active
     display block
@@ -122,7 +129,7 @@ footer
       cursor pointer
       filter grayscale(1)
       font-size 0
-      width 138px
+      width 100px
       height 62px
       margin 0 16px
       margin-bottom -1px
@@ -132,10 +139,10 @@ footer
       &:focus
           outline none
     .vina
-      background url('../img/vinaphone.svg') no-repeat center center
+      background url('../img/vinaphone.png') no-repeat center center
       background-size 100%
     .mobi
-      background url('../img/mobifone.svg') no-repeat center 22px
+      background url('../img/mobifone.png') no-repeat center 22px
       background-size 100%
   .data-pack
     clearfix()
@@ -320,6 +327,7 @@ footer
   align-items center
   list-style none
   margin 10px
+  padding 0
   button  
     cursor pointer
     display block
@@ -335,18 +343,12 @@ footer
       outline none
   .slick-active button 
       background #3F5466
-.fade
-	-webkit-animation-name fade
-	-webkit-animation-duration 0.5s
-	animation-name fade
-	animation-duration 0.5s
 .download
   padding 30px 0
   a
     display block
-    width 262px
-    max-width 32%
-    min-height 70px
+    width 200px
+    min-height 50px
     margin 16px auto
     font-size 0
     &.appstore
@@ -359,6 +361,7 @@ footer
       background url('../img/coccocpro.svg') no-repeat center center
       background-size 100%
 .overlay
+  fade()
   position fixed
   top 0
   left 0
@@ -441,8 +444,8 @@ footer
           display inline-block 
           width 1em
           margin-left -1em
-    .bottomlist
-      font-size 13px
+    .modal-info
+      padding-left 12px 
 
 @keyframes fade
   from 
@@ -484,6 +487,8 @@ footer
   .wraper
     background-size auto 800px
   #mainTab
+    .top-tabs .tab
+      width 140px
     .data-pack
       padding 75px 0 100px
       flex-direction row
@@ -511,10 +516,16 @@ footer
       .tabs
         left calc(100% - 340px)
   .download
-    padding 50px 0 80px
+    padding 50px 0 65px
     display flex
     justify-content space-around
     align-items center
+    a
+      width 262px
+      min-height 70px
+      max-width 32%
+  .dky
+    display none
   footer 
     font-size 14px
     line-height 27px
@@ -554,7 +565,7 @@ footer
   .slider
     .slide-item
       width 348px
-  .overlay
+  .overlay .modal
     .modal-wrap
       padding 45px 32px
     .btn-close
