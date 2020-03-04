@@ -32,7 +32,10 @@ module.exports = {
           presets: ['@babel/preset-env']
         }
       },
-      { test: /\.(styl|css)$/, loader: 'style-loader!css-loader!stylus-loader' },
+      {
+        test: /\.(styl|css)$/,
+        loader: 'style-loader!css-loader!stylus-loader'
+      },
       {
         // Load all images as base64 encoding if they are smaller than 8192 bytes
         test: /\.(png|jpe?g|gif|svg)$/i,

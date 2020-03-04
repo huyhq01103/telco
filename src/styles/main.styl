@@ -1,6 +1,29 @@
 $green = #4FBA69
+$greenDark = #14842F
 bg()
   background linear-gradient(90deg, $green 0%, #97C93D 100%)
+tabs()
+  display inline-block
+  background #F5F5F5
+  border-radius 3px
+  margin-bottom 20px
+  z-index 2
+tab()
+  padding 8px 35px
+  color #6E7171
+  background transparent
+  font-size 13px
+  border none
+  float left
+  cursor pointer
+  transition all 0.3s ease
+  &.active
+    border-radius 3px
+    background linear-gradient(183.07deg, #97C93D -17.47%, #2FC053 70.05%)
+    color white
+    box-shadow 0px 1px 2px rgba(78, 78, 78, 0.3)
+  &:focus
+    outline none
 fade()
   -webkit-animation-name fade
   -webkit-animation-duration 0.5s
@@ -17,7 +40,8 @@ clearfix()
 		zoom 1
 *
   box-sizing border-box
-  transition all 0.5s ease
+.text-center
+  text-align center
 img 
   max-width 100%
 html,body
@@ -111,6 +135,12 @@ footer
   display none
   &.active
     display block
+.data-table
+  text-align center
+  .tabs
+    tabs()
+  .tab
+    tab()
 
 #mainTab
   .top-tabs
@@ -153,25 +183,9 @@ footer
     align-items center
     position relative
     .tabs
-      background #F5F5F5
-      border-radius 3px
-      margin-bottom 20px
-      z-index 2
+      tabs()
     .tab
-      padding 8px 35px
-      color #6E7171
-      background transparent
-      font-size 13px
-      border none
-      float left
-      cursor pointer
-      &.active
-        border-radius 3px
-        background $green
-        color white
-        box-shadow 0px 1px 2px rgba(78, 78, 78, 0.3)
-      &:focus
-        outline none
+      tab()
     .imgbox
       position relative
       .item
@@ -190,6 +204,7 @@ footer
       cursor pointer
       text-decoration-line underline
       margin-top 20px
+      line-height 20px
     .action
       text-align center
   .mobi-wraper .data-pack
@@ -344,7 +359,7 @@ footer
   .slick-active button 
       background #3F5466
 .download
-  padding 30px 0
+  padding 10px 0
   a
     display block
     width 200px
@@ -375,14 +390,12 @@ footer
   &.active
     display flex
   .modal
-    width 800px
     background white
-    max-width calc(100% - 32px)
     font-size 14px
     line-height 18px
-    max-height 95%
     display flex
     position relative
+    height 100%
     .modal-wrap
       padding 35px 16px
       overflow auto
@@ -406,28 +419,32 @@ footer
       position absolute
       right 15px
       top 15px
+      transition all 0.3s ease
       &:hover
         color $green 
     h2
       text-align center
       margin 10px 0
     .label
-      background linear-gradient(90deg, #97C93D 0%, $green 100%)
-      padding 9px 12px
-      color white
-      margin 10px 0 12px
+      padding 0 0 0 13px
+      border-left 3px solid $greenDark
+      margin 10px 0 12px -16px
+      font-size 15px
+      line-height 1em
+      text-transform uppercase
       display inline-block
-      border-radius 8px 5px 9px 7px
-      clip-path polygon(0 10%, 100% 0, 96% 100%, 3% 100%)
-      -webkit-clip-path polygon(0 10%, 100% 0, 96% 100%, 3% 100%)
+      color $greenDark
     a
       color #006AFF
       text-decoration none
+    .btndky
+      text-align center
+      border-bottom 1px solid #E3E3E3
     .dky
       color white
-      margin 30px auto
+      margin 10px auto 25px
     p
-      margin-bottom 10px
+      margin 0 0 10px
     b
       font-weight 600
     ul
@@ -444,9 +461,137 @@ footer
           display inline-block 
           width 1em
           margin-left -1em
-    .modal-info
-      padding-left 12px 
+.list-tabs
+  li > span
+    font-weight 500
+    font-size 15px
+    line-height 19px
+  .list-content
+    font-size 13px
+    line-height 16px
+    padding-bottom 15px
+    border-bottom 1px solid #E3E3E3
+  .item-list
+    display flex
+    margin 10px 0
+    b
+      color $greenDark
+    span
+      white-space nowrap
+      min-width 100px
+      display flex
+      justify-content space-between
+      margin-right 5px
+      &:after
+        content: ':'
+  .qr
+    display flex
+    span
+      width 90px
+      margin 5px 13px 0 0
+// Accordion
+.accordion
+  background #F5F5F5
+  color black
+  overflow hidden
+  margin-bottom 10px
+  .toggle-content
+    max-height 0
+    padding 0 12px
+    transition all 0.3s ease
+  h5
+    margin 0
+    padding 16px 35px 16px 12px
+    font-weight normal
+    position relative
+    cursor pointer
+    &:after
+      content '\002B'
+      position absolute
+      top 50%
+      right 15px
+      margin-top -7px
+      font-size 28px
+      color #B7B7B7
+      float right
+  &.active
+    .toggle-content
+      max-height 500px
+      padding 10px 12px
+    h5
+      color white
+      background $green
+      &:after
+        content "\2212"
+        color white
 
+.data-table
+  table
+    width 100%
+    border-collapse collapse
+    border-spacing 0
+    empty-cells show
+    border none
+    margin-bottom 20px
+    border-radius 8px
+    overflow hidden
+    font-size 13px
+    line-height 16px
+  thead
+    border-bottom 2px solid #fff
+    background #37924E
+    th
+      color white
+      font-weight 500
+      border-right 1px solid rgba(255,255,255, .6)
+      padding 7px 16px
+      text-align center
+    tr:first-child
+      th
+        background $green
+        font-weight 600
+        text-align center
+  tbody
+    background #F5F5F5
+    tr
+      td
+        padding 7px 16px
+        text-align left
+        border-right 1px solid rgba(255,255,255, .6)
+        border-bottom 2px solid #fff
+table.graytb
+  width 100%
+  border-collapse collapse
+  border-spacing 0
+  empty-cells show
+  border none
+  margin-bottom 20px
+  border-radius 8px
+  overflow hidden
+  font-size 12px
+  line-height 16px
+  thead
+    th
+      background #E3E3E3
+      color #141515
+      font-weight 600
+      border-right 1px solid rgba(255,255,255, .6)
+      padding 7px 16px
+  b
+    font-weight 600
+  tbody
+    background #F5F5F5
+    tr
+      td
+        padding 7px 16px
+        text-align left
+        border-right 1px solid rgba(255,255,255, .6)
+        border-bottom 2px solid #fff
+      &:first-child td
+        font-size 13px
+        padding 13px 16px
+.hide-mobile
+  display none
 @keyframes fade
   from 
     opacity .4
@@ -526,6 +671,37 @@ footer
       max-width 32%
   .dky
     display none
+  .hide-pc
+    display none !important
+  .hide-mobile
+    display table-cell
+    &.table-row
+      display table-row
+  .list-tabs
+    .lists
+      padding-right 30px
+      border-right 1px solid #E3E3E3
+    .qr
+      span
+        width auto
+    .list-content
+      display flex
+      justify-content space-between
+  .data-table table
+    thead
+      th
+        font-weight 600
+        text-align left
+      tr:first-child
+        th
+          font-weight bold
+          font-size 14px
+
+  table.graytb
+    font-size 13px
+    thead
+      th
+        text-align left
   footer 
     font-size 14px
     line-height 27px
@@ -566,8 +742,15 @@ footer
     .slide-item
       width 348px
   .overlay .modal
+    width 800px
+    max-width calc(100% - 32px)
+    max-height 95%
     .modal-wrap
-      padding 45px 32px
+      padding 45px
+    .label
+      padding 0 0 0 10px
+      border-left 7px solid $green
+      margin 10px 0 12px -17px
     .btn-close
       right 20px
       top 20px

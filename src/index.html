@@ -19,7 +19,7 @@
 	<%= require('html-loader!./partials/header.html') %>
 	<div class="wraper">
 		<div class="container">
-			<div id="mainTab" class="accordion">
+			<div id="mainTab">
 				<div class="tabs top-tabs">
 					<button class="tab vina active" data-actab-group="0" data-actab-id="0">Vina</button>
 					<button class="tab mobi" data-actab-group="0" data-actab-id="1">Mobi</button>
@@ -72,6 +72,15 @@
 	const btnModal = document.querySelectorAll('.guide');
 	const modal = document.querySelector('.overlay');
 	const body = document.querySelector('body');
+	const acc = document.querySelectorAll(".accordion");
+
+	// Accordion
+	acc.forEach(function(item) {
+		item.addEventListener("click", function(){
+			this.classList.toggle("active");
+		});
+	});
+	// Overlay modal
 	btnModal.forEach(function(item) {
 		item.addEventListener("click", function(){
 			overlay();
@@ -98,7 +107,8 @@
 			: target.parentElement;
 		const group = item.dataset.actabGroup;
 		const id = item.dataset.actabId;
-
+		console.log("group" + group)
+		console.log("id" + id)
 		tabs.forEach(function(tab) {
 			if (tab.dataset.actabGroup === group) {
 				if (tab.dataset.actabId === id) {
