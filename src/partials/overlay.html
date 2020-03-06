@@ -1,15 +1,21 @@
 <div class="overlay">
     <div class="modal">
-        <span class="btn-close" onclick="closeBtn();">×</span>
+        <span class="btn-close">×</span>
         <div class="modal-wrap">
             <div class="modal-header">
                 <a href="coccoc.com" class="logo">coccoc</a>
+                <h2>Thông tin chung</h2>
+                <div class="tabs top-tabs">
+                    <button class="tab mobi" data-actab-group="3" data-actab-id="0">Mobi</button>
+                    <button class="tab vina" data-actab-group="3" data-actab-id="1">Vina</button>
+				</div>
             </div>
             <div class="modal-content">
-                <h2>Thông tin chung</h2>
                 <h4 class="label">Đối tượng</h4>
                 <div class="modal-info">
-                    <p>Dành cho người dùng điện thoại di động sử dụng mạng <b>Mobifone</b> hoặc <b>Vinaphone</b></p>
+                    <div class="item" data-actab-group="3" data-actab-id="0">Dành cho người dùng trình duyệt Cốc Cốc sử dụng mạng <b>MobiFone.</b> KHÔNG BAO GỒM thuê bao Fast Connect (cá nhân, doanh nghiệp)/Fast
+                        Connect Zone/MDT.</div>
+                    <div class="item" data-actab-group="3" data-actab-id="1">Dành cho người dùng trình duyệt Cốc Cốc đang sử dụng mạng <b>Vinaphone.</b></div>
                 </div>
                 <h4 class="label">Gói cước Cốc Cốc là gì?</h4>
                 <div class="modal-info">
@@ -20,75 +26,40 @@
                     </ul>
                     <h4>Thông tin dung lượng data của các tài khoản như sau:</h4>
                     <div class="data-table">
-                        <div class="tabs hide-pc">
-                            <button class="tab vina active" data-actab-group="3" data-actab-id="0">Gói tháng</button>
-                            <button class="tab mobi" data-actab-group="3" data-actab-id="1">Gói ngày</button>
-                        </div>
                         <table border="0">
                             <thead>
                                 <tr>
-                                    <th colspan="3" class="hide-mobile">Gói Tháng</th>
-                                    <th colspan="3" class="hide-pc">Vinaphone</th>
+                                    <th colspan="3" >Gói Tháng</th>
                                 </tr>
                                 <tr>
-                                    <th class="hide-mobile">Nhà mạng</th>
                                     <th>Tài khoản thường</th>
                                     <th>Tài khoản ưu đãi</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td class="hide-mobile">Vinaphone</td> <!-- Data Vinaphone mobile -->
                                     <td>
-                                        <div class="item active" data-actab-group="3" data-actab-id="0"><b>3.8GB</b></div>
-                                        <div class="item " data-actab-group="3" data-actab-id="1"><b>500MB</b></div>
+                                        <div class="item" data-actab-group="3" data-actab-id="0"><b>3GB</b></div>
+                                        <div class="item" data-actab-group="3" data-actab-id="1"><b>3.8GB</b></div>
                                     </td>
-                                    <td>
-                                        <div class="item active" data-actab-group="3" data-actab-id="0"><b>3.8GB</b></div>
-                                        <div class="item " data-actab-group="3" data-actab-id="1"><b>500MB</b></div>
-                                    </td>
-                                </tr>
-                                <tr class="hide-mobile table-row">
-                                    <td>Mobifone</td>
-                                    <td>n/a</td>
-                                    <td>n/a</td>
+                                    <td><div><b>5GB</b></div></td>
                                 </tr>
                             </tbody>
                         </table>
                         <table border="0">
                             <thead>
                                 <tr>
-                                    <th colspan="3" class="hide-mobile">Gói Ngày</th>
-                                    <th colspan="3" class="hide-pc">Mobile</th>
+                                    <th colspan="3">Gói Ngày</th>
                                 </tr>
                                 <tr>
-                                    <th class="hide-mobile">Nhà mạng</th>
                                     <th>Tài khoản thường</th>
                                     <th>Tài khoản ưu đãi</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td class="hide-mobile">Vinaphone</td>
-                                    <td>
-                                        <span class="hide-mobile"><b>500MB</b></span>
-                                        <div class="hide-pc"> <!-- Data mobifone mobile -->
-                                            <div class="item active" data-actab-group="3" data-actab-id="0"><b>...GB</b></div>
-                                            <div class="item " data-actab-group="3" data-actab-id="1"><b>...MB</b></div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <span class="hide-mobile"><b>500MB</b></span>
-                                        <div class="hide-pc"> <!-- Data mobifone mobile -->
-                                            <div class="item active" data-actab-group="3" data-actab-id="0"><b>...GB</b></div>
-                                            <div class="item" data-actab-group="3" data-actab-id="1"><b>...MB</b></div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr class="hide-mobile table-row">
-                                    <td>Mobifone</td>
-                                    <td>n/a</td>
-                                    <td>n/a</td>
+                                    <td><div><b>200MB</b></div></td>
+                                    <td><div><b>500MB</b></div></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -102,124 +73,95 @@
                 </div>
                 <h4 class="label">Cách đăng ký dịch vụ qua tin nhắn</h4>
                 <div class="modal-info">
-                    <ul class="list-tabs">
-                        <li>
-                            <span>Vinaphone</span>
+                    <div class="list-tabs">
+                        <div class="item" data-actab-group="3" data-actab-id="0"><!-- MOBI-->
                             <div class="list-content">
                                 <div class="lists">
                                     <div class="item-list">
                                         <span>Gói tháng</span>
-                                        <div>Soạn: <b>DK CC</b> gửi <b>1234</b> (<strong>70.000VNĐ</strong>/Tháng)</div> 
-                                    </div>
-                                    <div class="item-list">
-                                        <span>Gói ngày</span>
-                                        <div>Soạn: <b>DK CCN</b> gửi <b>1234</b> (<strong>5.000VNĐ</strong>/Ngày)</div> 
-                                    </div>
-                                </div>
-                                <div class="qr">
-                                    <span>Quét mã QR để gửi tin nhắn</span>
-                                    <img src="../img/qrcode.svg" width="90px" alt="qr code coc coc">
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <span>Mobifone</span>
-                            <div class="list-content">
-                                <div class="lists">
-                                    <div class="item-list">
-                                        <span>Gói tháng</span>
-                                        <div>Soạn: <b>DK CC</b> gửi <b>5678</b> (<strong>70.000VNĐ</strong>/Tháng)</div> 
+                                        <div>Soạn: <b>DK CC80</b> gửi <b>999</b> (<strong>80.000VNĐ</strong>/Tháng)</div> 
                                     </div>
                                     <div class="item-list">
                                         <span>Gói ngày</span>
                                         <div>Soạn: <b>DK CC5</b> gửi <b>999</b> (<strong>5.000VNĐ</strong>/Ngày)</div> 
                                     </div>
                                 </div>
-                                <div class="qr">
+                                <div class="qr hide-mobile">
                                     <span>Quét mã QR để gửi tin nhắn</span>
-                                    <img src="../img/qrcode.svg" width="90px" alt="qr code coc coc">
+                                    <img src="../img/qrcode.svg" width="80px" alt="qr code coc coc">
                                 </div>
                             </div>
-                        </li>
-                    </ul>
-                    <div class="hide-pc btndky"><a href="sms:[NUMMER]&body=[CONTENT]" class="dky">Đăng ký ngay</a></div>
+                        </div>
+                        <div class="item" data-actab-group="3" data-actab-id="1"><!-- VINA-->
+                            <div class="list-content">
+                                <div class="lists">
+                                    <div class="item-list">
+                                        <span>Gói tháng</span>
+                                        <div>Soạn: <b>DK CCT</b> gửi <b>1234</b> (<strong>70.000VNĐ</strong>/Tháng)</div> 
+                                    </div>
+                                    <div class="item-list">
+                                        <span>Gói ngày</span>
+                                        <div>Soạn: <b>DK CCN</b> gửi <b>1234</b> (<strong>5.000VNĐ</strong>/Ngày)</div> 
+                                    </div>
+                                </div>
+                                <div class="qr hide-mobile">
+                                    <span>Quét mã QR để gửi tin nhắn</span>
+                                    <img src="../img/qrcode.svg" width="80px" alt="qr code coc coc">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hide-pc btndky">
+                        <div class="item active" data-actab-group="3" data-actab-id="0"><a href="sms:[999]&body=[DK CC80]" class="dky">Đăng ký ngay</a></div>
+                        <div class="item" data-actab-group="3" data-actab-id="1"><a href="sms:[1234]&body=[DK CCT]" class="dky">Đăng ký ngay</a></div>
+                    </div>
                     <h4>Cách hủy và thực hiện các dịch vụ qua tin nhắn</h4>
-                    <table class="graytb hide-mobile">
+                    <table class="graytb">
                         <thead>
                             <tr>
-                                <th>Dịch vụ</th>
-                                <th>Vinaphone</th>
-                                <th>Mobifone</th>
+                                <th class="first">Dịch vụ</th>
+                                <th class="last">Cú pháp nhắn tin</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Hủy gói cước</td>
-                                <td>Soạn <b>HUY &lt;tên gói&gt;</b> gửi <b>1234</b></td>
-                                <td>Soạn <b>HUY &lt;tên gói&gt;</b> gửi <b>5678</b></td>
-                            </tr>
-                            <tr>
-                                <td>Hủy gia hạn gói cước</td>
-                                <td>Soạn <b>KGH &lt;tên gói&gt;</b> gửi <b>1234</b></td>
-                                <td>Soạn <b>KGH &lt;tên gói&gt;</b> gửi <b>5678</b></td>
-                            </tr>
-                            <tr>
-                                <td>Kiểm tra lưu lượng data còn lại</td>
-                                <td>Soạn <b>KT &lt;tên gói&gt;</b> gửi <b>1234</b></td>
-                                <td>Soạn <b>KT &lt;tên gói&gt;</b> gửi <b>5678</b></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table class="graytb hide-pc">
-                        <thead>
-                            <tr>
-                                <th class="text-center" colspan="2">Vinaphone</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Dịch vụ</td>
-                                <td>Cú pháp</td>
+                                <td>Đăng ký gói cước</td>
+                                <td>
+                                    <div class="item" data-actab-group="3" data-actab-id="0"><b>DK_&lt;MÃ GÓI&gt;</b> hoặc <b>&lt;MÃ GÓI&gt;</b> gửi <b>999</b></div>
+                                    <div class="item" data-actab-group="3" data-actab-id="1"><b>DK_&lt;MÃ GÓI&gt;</b> gửi <b>1234</b></div> 
+                                </td>
                             </tr>
                             <tr>
                                 <td>Hủy gói cước</td>
-                                <td>Soạn <b>HUY &lt;tên gói&gt;</b> gửi <b>1234</b></td>
+                                <td>
+                                    <div class="item" data-actab-group="3" data-actab-id="0"><b>HUY_&lt;MÃ GÓI&gt;</b> gửi <b>999</b></div>
+                                    <div class="item" data-actab-group="3" data-actab-id="1"><b>HUY_&lt;MÃ GÓI&gt;</b> gửi <b>1234</b></div>
+                                </td> 
                             </tr>
                             <tr>
                                 <td>Hủy gia hạn gói cước</td>
-                                <td>Soạn <b>KGH &lt;tên gói&gt;</b> gửi <b>1234</b></td>
+                                <td>
+                                    <div class="item" data-actab-group="3" data-actab-id="0"><b>KGH_&lt;MÃ GÓI&gt;</b> gửi <b>999</b></div>
+                                    <div class="item" data-actab-group="3" data-actab-id="1"><b>KGH_&lt;MÃ GÓI&gt;</b> gửi <b>1234</b></div>
+                                </td>    
                             </tr>
                             <tr>
                                 <td>Kiểm tra lưu lượng data còn lại</td>
-                                <td>Soạn <b>KT &lt;tên gói&gt;</b> gửi <b>1234</b></td>
+                                <td>
+                                    <div class="item" data-actab-group="3" data-actab-id="0"><b>KT_&lt;MÃ GÓI&gt;</b> gửi <b>999</b></div>
+                                    <div class="item" data-actab-group="3" data-actab-id="1"><b>KT_&lt;MÃ GÓI&gt;</b> gửi <b>1234</b></div>
+                                </td> 
+                            </tr>
+                            <tr>
+                                <td>Khách hàng chủ động gia hạn gói cước</td>
+                                <td>
+                                    <div class="item" data-actab-group="3" data-actab-id="0"><b>KT_&lt;MÃ GÓI&gt;</b> gửi <b>999</b></div>
+                                    <div class="item" data-actab-group="3" data-actab-id="1"><b>KT_&lt;MÃ GÓI&gt;</b> gửi <b>1234</b></div>
+                                </td> 
                             </tr>
                         </tbody>
                     </table>
-                    <table class="graytb hide-pc">
-                        <thead>
-                            <tr>
-                                <th colspan="2">Mobifone</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Dịch vụ</td>
-                                <td>Cú pháp</td>
-                            </tr>
-                            <tr>
-                                <td>Hủy gói cước</td>
-                                <td>Soạn <b>HUY &lt;tên gói&gt;</b> gửi <b>5678</b></td>
-                            </tr>
-                            <tr>
-                                <td>Hủy gia hạn gói cước</td>
-                                <td>Soạn <b>KGH &lt;tên gói&gt;</b> gửi <b>5678</b></td>
-                            </tr>
-                            <tr>
-                                <td>Kiểm tra lưu lượng data còn lại</td>
-                                <td>Soạn <b>KT &lt;tên gói&gt;</b> gửi <b>5678</b></td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <p class="note">Trong đó “_” là dấu cách khi khách hàng soạn tin nhắn. Phí dịch vụ: 200đ/SMS</p>
                 </div>
                 <h4 class="label">Các câu hỏi thường gặp</h4>
                 <div class="toggle-tab">
